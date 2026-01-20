@@ -1,0 +1,78 @@
+{
+  "protoPayload": {
+    "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+    "authenticationInfo": {
+      "principalEmail": "Srichaitra2712@gmail.com",
+      "principalSubject": "user:Srichaitra2712@gmail.com"
+    },
+    "requestMetadata": {
+      "callerIp": "117.251.86.146",
+      "callerSuppliedUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,gzip(gfe)",
+      "requestAttributes": {
+        "time": "2026-01-20T19:07:50.411815950Z",
+        "auth": {}
+      },
+      "destinationAttributes": {}
+    },
+    "serviceName": "pubsub.googleapis.com",
+    "methodName": "google.pubsub.v1.Subscriber.CreateSubscription",
+    "authorizationInfo": [
+      {
+        "resource": "projects/siem-log-ingestion-484917",
+        "permission": "pubsub.subscriptions.create",
+        "granted": true,
+        "resourceAttributes": {},
+        "permissionType": "ADMIN_WRITE"
+      },
+      {
+        "resource": "projects/siem-log-ingestion-484917/subscriptions/siem-logs-topic-sub",
+        "permission": "pubsub.subscriptions.create",
+        "granted": true,
+        "resourceAttributes": {
+          "service": "pubsub.googleapis.com",
+          "name": "projects/siem-log-ingestion-484917/subscriptions/siem-logs-topic-sub",
+          "type": "pubsub.googleapis.com/Subscription"
+        },
+        "permissionType": "ADMIN_WRITE"
+      }
+    ],
+    "resourceName": "projects/siem-log-ingestion-484917/subscriptions/siem-logs-topic-sub",
+    "request": {
+      "messageRetentionDuration": "604800s",
+      "filter": "",
+      "ackDeadlineSeconds": 10,
+      "retainAckedMessages": false,
+      "enableMessageOrdering": false,
+      "topic": "projects/siem-log-ingestion-484917/topics/siem-logs-topic",
+      "name": "projects/siem-log-ingestion-484917/subscriptions/siem-logs-topic-sub",
+      "expirationPolicy": {
+        "ttl": "2678400s"
+      },
+      "enableExactlyOnceDelivery": false,
+      "@type": "type.googleapis.com/google.pubsub.v1.Subscription"
+    },
+    "response": {
+      "messageRetentionDuration": "604800s",
+      "@type": "type.googleapis.com/google.pubsub.v1.Subscription",
+      "ackDeadlineSeconds": 10,
+      "topic": "projects/siem-log-ingestion-484917/topics/siem-logs-topic",
+      "pushConfig": {},
+      "expirationPolicy": {
+        "ttl": "2678400s"
+      },
+      "name": "projects/siem-log-ingestion-484917/subscriptions/siem-logs-topic-sub"
+    }
+  },
+  "insertId": "tgxw3mc1uv",
+  "resource": {
+    "type": "pubsub_subscription",
+    "labels": {
+      "project_id": "siem-log-ingestion-484917",
+      "subscription_id": "projects/siem-log-ingestion-484917/subscriptions/siem-logs-topic-sub"
+    }
+  },
+  "timestamp": "2026-01-20T19:07:50.403805331Z",
+  "severity": "NOTICE",
+  "logName": "projects/siem-log-ingestion-484917/logs/cloudaudit.googleapis.com%2Factivity",
+  "receiveTimestamp": "2026-01-20T19:08:08.093273599Z"
+}

@@ -1,0 +1,34 @@
+import base64
+import json
+import requests
+import os
+
+def send_to_siem(event, context):
+    """
+    Triggered by Pub/Sub messages from GCP Logging sink.
+    Decodes log payload and forwards it to SIEM.
+    """
+
+    # Decode Pub/Sub message
+    log_entry = base64.b64decode(event['data']).decode('utf-8')
+    log_data = json.loads(log_entry)
+
+    # Prepare SIEM request
+    headers = {
+        "Authorization": f"Splunk {os.environ.get('SIEM_TOKEN')}",
+        "Content-Type": "application/json"
+    }
+
+    payload = {
+        "event": log_data,
+        "source": "gcp",
+        "sourcetype": "gcp:audit"
+    }
+
+    # Send to SIEM
+    requests.post(
+        os.environ.get('SIEM_ENDPOINT'),
+        headers=headers,
+        json=payload,
+        timeout=5
+    )

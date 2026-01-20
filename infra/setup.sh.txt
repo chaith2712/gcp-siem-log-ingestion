@@ -1,0 +1,16 @@
+# Create Pub/Sub topic
+gcloud pubsub topics create siem-logs-topic
+
+# Create subscription
+gcloud pubsub subscriptions create siem-logs-sub \
+  --topic=siem-logs-topic
+
+# Create logging sink
+gcloud logging sinks create vpc-firewall-siem-sink \
+  pubsub.googleapis.com/projects/PROJECT_ID/topics/siem-logs-topic \
+  --log-filter='logName:"cloudaudit.googleapis.com"'
+
+# Grant permission to sink
+gcloud pubsub topics add-iam-policy-binding siem-logs-topic \
+  --member="serviceAccount:logging@PROJECT_ID.iam.gserviceaccount.com" \
+  --role="roles/pubsub.publisher"

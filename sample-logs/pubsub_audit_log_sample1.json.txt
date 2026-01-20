@@ -1,0 +1,64 @@
+{
+  "protoPayload": {
+    "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+    "authenticationInfo": {
+      "principalEmail": "Srichaitra2712@gmail.com",
+      "principalSubject": "user:Srichaitra2712@gmail.com"
+    },
+    "requestMetadata": {
+      "callerIp": "117.251.86.146",
+      "callerSuppliedUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36,gzip(gfe)",
+      "requestAttributes": {
+        "time": "2026-01-20T19:07:36.897101310Z",
+        "auth": {}
+      },
+      "destinationAttributes": {}
+    },
+    "serviceName": "pubsub.googleapis.com",
+    "methodName": "google.pubsub.v1.Publisher.CreateTopic",
+    "authorizationInfo": [
+      {
+        "resource": "projects/siem-log-ingestion-484917",
+        "permission": "pubsub.topics.create",
+        "granted": true,
+        "resourceAttributes": {},
+        "permissionType": "ADMIN_WRITE"
+      },
+      {
+        "resource": "projects/siem-log-ingestion-484917/topics/siem-logs-topic",
+        "permission": "pubsub.topics.create",
+        "granted": true,
+        "resourceAttributes": {
+          "service": "pubsub.googleapis.com",
+          "name": "projects/siem-log-ingestion-484917/topics/siem-logs-topic",
+          "type": "pubsub.googleapis.com/Topic"
+        },
+        "permissionType": "ADMIN_WRITE"
+      }
+    ],
+    "resourceName": "projects/siem-log-ingestion-484917/topics/siem-logs-topic",
+    "request": {
+      "messageRetentionDuration": "604800s",
+      "name": "projects/siem-log-ingestion-484917/topics/siem-logs-topic",
+      "kmsKeyName": "",
+      "@type": "type.googleapis.com/google.pubsub.v1.Topic"
+    },
+    "response": {
+      "@type": "type.googleapis.com/google.pubsub.v1.Topic",
+      "name": "projects/siem-log-ingestion-484917/topics/siem-logs-topic",
+      "messageRetentionDuration": "604800s"
+    }
+  },
+  "insertId": "s2lbanc210",
+  "resource": {
+    "type": "pubsub_topic",
+    "labels": {
+      "project_id": "siem-log-ingestion-484917",
+      "topic_id": "projects/siem-log-ingestion-484917/topics/siem-logs-topic"
+    }
+  },
+  "timestamp": "2026-01-20T19:07:36.891499830Z",
+  "severity": "NOTICE",
+  "logName": "projects/siem-log-ingestion-484917/logs/cloudaudit.googleapis.com%2Factivity",
+  "receiveTimestamp": "2026-01-20T19:07:49.194385674Z"
+}
