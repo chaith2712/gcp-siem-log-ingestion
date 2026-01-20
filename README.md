@@ -106,22 +106,23 @@ This provides Infrastructure-as-Code–style reproducibility without requiring T
 -Secrets (SIEM tokens/endpoints) handled via environment variables
 
 📁 Repository Structure
+
 gcp-siem-log-ingestion/
-│
 ├── cloud-function/
-│   ├── main.py
-│   └── requirements.txt
+│ ├── main.py
+│ └── requirements.txt
 │
 ├── infra/
-│   └── gcloud-commands.txt
+│ └── gcloud-commands.txt
 │
 ├── sample-logs/
-│   └── sample_audit_log.json
+│ └── sample_audit_log.json
 │
 ├── screenshots/
-│   └── Fig1_...png
+│ └── Fig1_...png
 │
 └── README.md
+
 
 ✅ Outcome
 This project demonstrates:
